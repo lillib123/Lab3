@@ -12,9 +12,10 @@ $("#close").click(function() {
 
 $(".circles").click(function(){
   $("#form").fadeIn(300);
+  console.log($(this).attr("class"));
 
-    if ($(this).attr("class") === "circles reserved") {
-      alert("This table is already reserved");
+    if ($(this).attr("class") === "circles available reserved") {
+      $(this).css("cursor", "notAvailable");
       $("#form").hide();
     } else
       $(this).addClass("reserved");
